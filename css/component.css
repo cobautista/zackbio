@@ -1,0 +1,275 @@
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+body {
+	background: rgb(247, 245, 245);
+	font-family: 'Permanent Marker', cursive;
+	color: #fff;
+}
+.showAssign {    
+	position: absolute;
+	right: 0;
+	width: 100%;
+	min-height: 100vh;
+	padding: 100px;      
+	background: #111;
+	transition: 0.5s;
+}
+
+.showAssign video
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.1;
+}
+
+#img-div {
+	margin: 0 auto 100px auto;
+	max-width: 960px;
+}
+
+.stage {
+	list-style: none;
+	padding: 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+#main > header,
+.codrops-top {
+	font-family: 'Permanent Marker', cursive;
+}
+
+#main > header {
+	margin: 0 auto;
+	padding: 2em;
+	text-align: center;
+	
+}
+
+#main > header h1 {
+	font-size: 2.625em;
+	line-height: 1.3;
+	margin: 0;
+	font-weight: 300;
+	
+	
+}
+
+#main > header span {
+	display: block;
+	font-size: 60%;
+	opacity: 0.7;
+	padding: 0 0 0.6em 0.1em;
+}
+
+/*************************************
+rotating effects
+**************************************/
+
+#image {
+	width: 260px;
+	height: 400px;
+	margin: 30px;
+	float: left;
+	-webkit-perspective: 1000px;
+	-moz-perspective: 1000px;
+	perspective: 1000px;
+}
+
+.rage {
+	width: 260px;
+	height: 400px;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform: translateZ(-130px);
+	-moz-transform: translateZ(-130px);
+	transform: translateZ(-130px);
+	-webkit-transition: -webkit-transform 350ms;
+	-moz-transition: -moz-transform 350ms;
+	transition: transform 350ms;
+}
+
+.rage:hover {
+	-webkit-transform: rotateY(-78deg) translateZ(20px);
+	-moz-transform: rotateY(-78deg) translateZ(20px);
+	transform: rotateY(-78deg) translateZ(20px);
+}
+
+/*************************************
+effects poster
+**************************************/
+
+.rage .poster, 
+.rage .info {
+	position: absolute;
+	width: 260px;
+	height: 400px;
+	background-color: #fff;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.rage .poster  {
+	-webkit-transform: translateZ(130px);
+	-moz-transform: translateZ(130px);
+	transform: translateZ(130px);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.rage .info {
+	-webkit-transform: rotateY(90deg) translateZ(130px);
+	-moz-transform: rotateY(90deg) translateZ(130px);
+	transform: rotateY(90deg) translateZ(130px);
+	border: 1px solid #B8B5B5;
+	font-size: 0.75em;
+}
+
+/*************************************
+box shadow
+**************************************/
+
+.csstransforms3d .rage::after {
+	content: '';
+	width: 260px;
+	height: 260px;
+	position: absolute;
+	bottom: 0;
+	box-shadow: 0 30px 50px rgba(0,0,0,0.3);
+	-webkit-transform-origin: 100% 100%;
+	-moz-transform-origin: 100% 100%;
+	transform-origin: 100% 100%;
+	-webkit-transform: rotateX(90deg) translateY(130px);
+	-moz-transform: rotateX(90deg) translateY(130px);
+	transform: rotateX(90deg) translateY(130px);
+	-webkit-transition: box-shadow 350ms;
+	-moz-transition: box-shadow 350ms;
+	transition: box-shadow 350ms;
+}
+
+.csstransforms3d .rage:hover::after {
+	box-shadow: 20px -5px 50px rgba(0,0,0,0.3);
+}
+
+/*************************************
+rage information
+**************************************/
+
+.info header {
+	color: #FFF;
+	padding: 7px 10px;
+	font-weight: bold;
+	height: 195px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	text-shadow: 0px 1px 1px rgb(245, 241, 241);
+}
+
+.info header h1 {
+	margin: 0 0 2px;
+	font-size: 1.4em;
+}
+
+.info header .rating {
+	border: 1px solid #FFF;
+	padding: 0px 3px;
+}
+
+.info p {
+	padding: 1.2em 1.4em;
+	margin: 2px 0 0;
+	font-weight: 700;
+	color: #666;
+	line-height: 1.4em;
+	border-top: 10px solid #555;
+}
+
+/*************************************
+box shadows light
+**************************************/
+
+.rage .poster,
+.rage .info,
+.rage .info header {
+	-webkit-transition: box-shadow 350ms;
+	-moz-transition: box-shadow 350ms;
+	transition: box-shadow 350ms;
+}
+
+.csstransforms3d .rage .poster {
+	box-shadow: inset 0px 0px 40px rgba(255,255,255,0);
+}
+
+.csstransforms3d .rage:hover .poster {
+	box-shadow: inset 300px 0px 40px rgba(255,255,255,0.8);
+}
+
+.csstransforms3d .rage .info, 
+.csstransforms3d .rage .info header {
+	box-shadow: inset -300px 0px 40px rgba(0,0,0,0.5);
+}
+
+.csstransforms3d .rage:hover .info, 
+.csstransforms3d .rage:hover .info header {
+	box-shadow: inset 0px 0px 40px rgba(0,0,0,0);
+}
+
+/*************************************
+poster and description image
+**************************************/
+
+#image:nth-child(1) .rage .poster {
+  background-image: url(../img/poster01.jpg);
+}
+
+#image:nth-child(2) .poster {
+  background-image: url(../img/poster02.jpg);
+}
+
+#image:nth-child(3) .poster {
+  background-image: url(../img/poster03.jpg);
+}
+
+#image:nth-child(1) .info header {
+	background-image: url(../img/still01.jpg);
+}
+
+#image:nth-child(2) .info header {
+	background-image: url(../img/still02.jpg);
+}
+
+#image:nth-child(3) .info header {
+	background-image: url(../img/still03.jpg);
+}
+
+/*************************************
+Fallback
+**************************************/
+.no-csstransforms3d .rage .poster, 
+.no-csstransforms3d .rage .info {
+	position: relative;
+}
+
+/*************************************
+Media Queries
+**************************************/
+@media screen and (max-width: 60.75em){
+	#image {
+		float: none;
+		margin: 30px auto 60px;
+	}
+}
